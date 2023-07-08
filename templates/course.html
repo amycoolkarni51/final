@@ -1,0 +1,605 @@
+{% load static %}
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <title>Our_Courses_Page</title>
+</head>
+<style>
+   /* this section done by Anthti vamsi  */
+  .body{
+    background: linear-gradient(90deg, rgb(46, 57, 59, 0.8), rgb(91, 202, 202));
+    block-size: 100%;
+    width: 100%;
+    height: 100%;
+    position: relative;
+  }
+ /* this section done by Gayathri Olla  */
+   .bubble {
+    width: 70px;
+    height: 70px;
+    border:5px solid white;
+    position: absolute;
+    z-index: -1;
+  }
+  .bubble:nth-child(1){
+    top: 20%;
+    left: 40%;
+    animation: square 5s linear infinite;
+  }
+  .bubble:nth-child(2){
+    top:10%;
+    left: 60%;
+    animation: square 7s linear infinite;
+  }
+  .bubble:nth-child(3){
+    top: 60%;
+    left: 10%;
+    animation: square 9s linear infinite;
+  }
+  .bubble:nth-child(4){
+    top: 50%;
+    left: 40%;
+    animation: square 11s linear infinite;
+  }
+  .bubble:nth-child(5){
+    top: 40%;
+    left: 60%;
+    animation: square 7s linear infinite;
+  }
+  .bubble:nth-child(6){
+    top: 80%;
+    left: 30%;
+    animation: square 13s linear infinite;
+  }
+  .bubble:nth-child(7){
+    top: 10%;
+    left: 10%;
+    animation: square 12s linear infinite;
+  }
+  .bubble:nth-child(8){
+    top:20%;
+    left: 85%;
+    animation: square 8s linear infinite;
+  }
+  .bubble:nth-child(9){
+    top: 75%;
+    left: 65%;
+    animation: square 9s linear infinite;
+  }
+  .bubble:nth-child(10){
+    top: 80%;
+    left: 85%;
+    animation: square 7s linear infinite;
+  }
+  .bubble:nth-child(11){
+    top: 60%;
+    left: 75%;
+    animation: square 15s linear infinite;
+  }
+  .bubble:nth-child(12){
+    top: 10%;
+    left: 25%;
+    animation: square 14s linear infinite;
+  }
+  .bubble:nth-child(13){
+    top: 30%;
+    left: 5%;
+    animation: square 6s linear infinite;
+  }
+  .bubble:nth-child(14){
+    top: 40%;
+    left: 90%;
+    animation: square 9s linear infinite;
+  }
+  .bubble:nth-child(15){
+    top: 85%;
+    left: 5%;
+    animation: square 7s linear infinite;
+  }
+  .bubble:nth-child(16){
+    top: 90%;
+    left: 90%;
+    animation: square 9s linear infinite;
+  }
+  @keyframes square{
+    0%{
+      transform: scale(0) translateY(0) rotate(0);
+      opacity: 1;
+    }
+    100%{
+      transform: scale(1.2) translateY(-90px) rotate(360deg);
+      opacity: 0;
+    }
+
+  }
+ /* this section section done by Gayathri Olla  */
+  .text-box{
+    font-size: 50px;
+    line-height: 50px;
+    color: transparent;
+    -webkit-text-stroke: 2px #090909;
+    background: url(https://t3.ftcdn.net/jpg/05/50/46/76/360_F_550467647_DH0UaQ3JD2KmZCKXkbiaN1Zi75ykf8ie.webp);
+    -webkit-background-clip: text;
+    background-position: 0 0;
+    animation: back 20s linear infinite;
+    color: #e79a3c;
+
+  }
+   /* this section section done by Gayathri Olla  */
+  @keyframes back{
+    100%{
+      background-position:2000px 0;
+    }
+  }
+   /* Navbar section done by Narendra Chimata */
+  .navbar-section{
+   background: transparent;
+   color: rgb(255, 255, 255);
+   inset-block-start: fixed;
+
+  }
+  /* Navbar section done by Narendra Chimata */
+  .navbar-section img{
+    margin-inline-end:5%;
+    width:20%;
+    height:20%;
+    border-radius:50%;
+  }
+   /* this section section done by Anthti vamsi  */
+  .h1-carousel{
+    color:rgb(171, 4, 4);
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
+    font-weight: bolder;
+    text-shadow: 0px 1px black;
+
+  }
+  .paragraph-carousel{
+    color: rgb(0, 0, 0);
+    font-weight: 10%;
+    font-weight: bolder;
+    font-family: Arial, Helvetica, sans-serif;
+    text-shadow: 0px 0.9px rgb(245, 245, 6) ;
+    background: transparent;
+
+  }
+  .box {
+    position: absolute;
+    top: 500%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    overflow: hidden;
+    padding: 5px 20px;
+    font-size: 25px;
+    text-decoration: none;
+    background-color: #d0fefe;
+    letter-spacing: 1px;
+    font-weight: bold;
+    box-shadow: 0 20px 50px rgb(255 255 255 /5%);
+  }
+   /* this section done by Gayathri Olla  */
+  .box :before{
+    position: absolute;
+    width: 50px;
+    top: 2px;
+    left: 2px;
+    bottom: 2px;
+    content: '';
+    background: rgb(142 255 240 /10%);
+  }
+  .box span:nth-child(1){
+    position: absolute;
+    width: 100%;
+    height: 5px;
+    top: 0;
+    left: 0;
+    background: linear-gradient(to right, #f5fb33, #34c5ff);
+    animation: animate1 2s linear infinite;
+  }
+  @keyframes animate1{
+    0%{
+      transform: translateX(-100%);
+    }
+    100%{
+      transform: translateX(100%);
+    }
+  }
+  .box span:nth-child(2){
+    position: absolute;
+    width: 5px;
+    height: 100%;
+    top: 0;
+    right: 0;
+    background: linear-gradient(to bottom, #002b9d, #34ffea);
+    animation: animate2 2s linear infinite;
+    animation-delay: 1s;
+  }
+  @keyframes animate2{
+    0%{
+      transform: translateY(-100%);
+    }
+    100%{
+      transform: translatey(100%);
+    }
+  }
+  .box span:nth-child(3){
+    position: absolute;
+    width: 100%;
+    height: 5px;
+    bottom: 0;
+    left: 0;
+    background: linear-gradient(to left, #002b9d, #34ffea);
+    animation: animate3 2s linear infinite;
+  }
+  @keyframes animate3{
+    0%{
+      transform: translateX(100%);
+    }
+    100%{
+      transform: translatex(-100%);
+    }
+  }
+  .box span:nth-child(4){
+    position: absolute;
+    width: 5px;
+    height: 100%;
+    top: 0;
+    left: 0;
+    background: linear-gradient(to top, #002b9d, #34ffea);
+    animation: animate4 2s linear infinite;
+    animation-delay: 1s;
+  }
+  @keyframes animate4{
+    0%{
+      transform: translateY(100%);
+    }
+    100%{
+      transform: translatey(-100%);
+    }
+  }
+  .card-box{
+    padding: 6px;
+    box-sizing: border-box;
+    position: center;
+    bottom: 240px;
+    transition: .5s;
+    height: 10px;
+
+
+  }
+
+  .carousel-caption{
+    box-sizing: border-box;
+    position: absolute;
+  }
+  .carousel-item img{
+    block-size:550px;
+    width: 100%;
+    border-radius: 5%;
+  }
+   /* this section section done by Gayathri Olla  */
+  .carousel-inner{
+    padding: 20px;
+    margin: auto;
+  }
+  .carousel-inner:hover{
+    cursor: pointer;
+  }
+  .carousel-inner:hover .card-box{
+
+    bottom: 240px;
+  }
+  .img-sec{
+        width: 100%;
+        height: 160px;
+        border-radius: 10px;
+      }
+      .img-sec:hover{
+        transform: scale(1.3);
+        z-index: 2;
+      }
+      .nav{
+        width: 100%;
+        height: 50px;
+        background-color: white;
+        position: sticky;
+        top: 0;
+      }
+      nav ul{
+        display: flex;
+        margin-bottom:10px;
+        padding: 0;
+        float: right;
+      }
+  .videos{
+    margin-left: 2%;
+    margin-right: 2%;
+  }
+  .fa-twitter {
+  background: #55ACEE;
+  color: white;
+  width: 5%;
+  block-size: 50%;
+  border-radius:20%;
+}
+.fa-linkedin {
+  background: #007bb5;
+  color: white;
+  width: 5%;
+  block-size: 50%;
+  border-radius:20%;
+}
+
+.fa-youtube {
+  background: #bb0000;
+  color: white;
+  width: 5%;
+  block-size: 50%;
+}
+.find-button{
+  margin-top: 10%;
+}
+ /* this section section done by vijay Mankape */
+.discount-tag {
+  background-color: #f20606;
+  color : white;
+  font-weight: bold;
+  padding: 5px 10px;
+  border-radius: 5px;
+  margin-bottom: 10px;
+  display: inline-block;
+  position: absolute;
+  top: 10px;
+  right: 10px;
+  transform: rotate(-20deg);
+  font-size: 16px;
+  letter-spacing: 1px;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+}
+ /* this section done by Anthti Vamsi  */
+.link{
+  text-decoration: none;
+}
+</style>
+<!-- /* CDN line done by Anthti vamsi  */-->
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.6.2/dist/css/bootstrap.min.css">
+<script src="https://cdn.jsdelivr.net/npm/jquery@3.6.4/dist/jquery.slim.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.1/dist/umd/popper.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@4.6.2/dist/js/bootstrap.bundle.min.js"></script>
+<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+<body class="body">
+<!--Navbar section done by Narendra Chimata-->
+      <div class="container-field-navbar">
+        <div class="navbar-section">
+          <nav class="navbar sticky-top navbar-expand-lg navbar-light ">
+            <a href="course.html"><h5 class="text-box"><img src="https://media.licdn.com/dms/image/C560BAQETm0mhlZFeqQ/company-logo_200_200/0/1675503582524?e=2147483647&v=beta&t=FlvlvidSDyNqpgt-6Okq1I6wb1a-midaUKx3KJQgfJA"/>Our Courses </h5> </a>
+            <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+              <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarNav">
+              <ul class="navbar-nav ml-auto">
+                <li class="nav-item active">
+                  <a class="nav-link btn btn-outline-warning btn-sm mr-3 text-white" href="{% url 'frontend' %}">Frontend</a>
+                </li>
+                <li class="nav-item active">
+                  <a class="nav-link btn btn-outline-warning btn-sm mr-3 text-white" href="{% url 'backend' %}">Backend</a>
+                </li>
+                <li class="nav-item active">
+                  <a class="nav-link btn btn-outline-warning btn-sm mr-3 text-white" href="{% url 'database' %}">Database</a>
+                </li>
+                <li class="nav-item active">
+                  <a class="nav-link btn btn-outline-warning btn-sm text-white" href="{% url 'marketing' %}">Marketing</a>
+                </li>
+              </ul>
+            </div>
+          </nav>
+        </div>
+
+      </div>
+      <!--This section done by vamsi anthti-->
+      <div class="container">
+        <div id="carouselExampleCaptions" class="carousel slide" data-ride="carousel">
+          <ol class="carousel-indicators">
+            <li data-target="#carouselExampleCaptions" data-slide-to="0" class="active"></li>
+            <li data-target="#carouselExampleCaptions" data-slide-to="1"></li>
+            <li data-target="#carouselExampleCaptions" data-slide-to="2"></li>
+            <li data-target="#carouselExampleCaptions" data-slide-to="2"></li>
+          </ol>
+          <div class="carousel-inner">
+            <div class="carousel-item active">
+              <img src="https://www.htmlpanda.com/assets-new/images/final.gif" class="d-block w-100 height-50" alt="...">
+              <!--This section done by Gayathri Olla -->
+              <div class="card-box">
+                <div class="card-box carousel-caption" id="card-box">
+                  <h1 class="h1-carousel mt-5">Frontend</h1>
+                  <p class="paragraph-carousel">The frontend is everything a user sees and interacts with when they click on a link or type in a web address.
+                    The web address is also known as at URL, or Uniform Resource Locator, and it tells what webpage should load and appear in your browser.
+                    It is the client-side part of a web application.</p>
+                    <div class="box mt-5">
+                      <a href="frontend.html" style="color: #1B3FAB;" class="find-button">
+                      <span></span>
+                      <span></span>
+                      <span></span>
+                      <span></span>Find More</a>
+                    </div>
+                </div>
+
+              </div>
+            </div>
+            <div class="carousel-item">
+              <img src="https://user-images.githubusercontent.com/22107794/139606420-eaa56bc7-9377-4f5d-9356-aed07bed3143.gif" class="d-block w-100" alt="...">
+              <div class="card-box">
+                <div class="card-box carousel-caption" id="card-box">
+                  <h1 class="h1-carousel mt-5">Backend</h1>
+                  <p class="paragraph-carousel">Back-end development means working on server-side software, which focuses on everything you can't see on a website.
+                      Back-end developers ensure the website performs correctly, focusing on databases, back-end logic,
+                  application programming interface (APIs), architecture, and servers.</p>
+                  <div class="box mt-5">
+                    <a href="backend.html" style="color: #0515fa;">
+                    <span></span>
+                    <span></span>
+                    <span></span>
+                    <span></span> Find More</a>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <div class="carousel-item">
+              <img src="https://cdn3.iconfinder.com/data/icons/database-35/66/8-512.png" class="d-block w-100" alt="...">
+              <div class="card-box">
+                <div class="card-box carousel-caption" id="card-box">
+                  <h1 class="h1-carousel mt-5">Database</h1>
+                  <p class="paragraph-carousel">A database is an organized collection of structured information, or data, typically stored electronically in a computer system.
+                    A database is usually controlled by a database management system (DBMS).</p>
+                    <div class="box mt-5">
+                      <a href="database.html" style="color: rgb(9, 89, 239);">
+                      <span></span>
+                      <span></span>
+                      <span></span>
+                      <span></span> Find More</a>
+                    </div>
+                </div>
+              </div>
+            </div>
+            <div class="carousel-item">
+              <img src="https://parkyddigital.com/img/service%20digital%20marketing%20agency%20toronto.gif" class="d-block w-100" alt="...">
+              <div class="card-box">
+                <div class="card-box carousel-caption" id="card-box">
+                  <h1 class="h1-carousel mt-5">Marketing</h1>
+                  <p class="paragraph-carousel">Marketing is the activity, set of institutions,
+                    and processes for creating, communicating,set of institutions,
+                    and processes for creating, communicating </p>
+                    <div class="box mt-5">
+                      <a href="marketing.html" style="color: #1B3FAB;">
+                      <span></span>
+                      <span></span>
+                      <span></span>
+                      <span></span> Find More</a>
+                    </div>
+                </div>
+              </div>
+            </div>
+          </div>
+          <button class="carousel-control-prev" type="button" data-target="#carouselExampleCaptions" data-slide="prev">
+            <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+
+          </button>
+          <button class="carousel-control-next" type="button" data-target="#carouselExampleCaptions" data-slide="next">
+            <span class="carousel-control-next-icon" aria-hidden="true"></span>
+          </button>
+        </div>
+        <div class="fe-section mt-5" id="fe-section">
+         <div class="container mt-2">
+           <h1 class="text-box text-center mb-5">Become A Pro with Our Latest Courses</h1>
+           <div class="row">
+            <div class="col-md-4">
+               <div class="card p-3 mb-3">
+                 <img src="https://miro.medium.com/v2/resize:fit:955/1*eUTK5gvvm8H1_kGR_S6Ncg.png" class="img-sec img-thumbnail">
+                 <div class="card-body">
+                   <h5 class="card-title">postgre Sql</h5>
+                   <p class="card-text">PostgreSQL is one of the most advanced general-purpose object-relational database management system and is open-source.</p>
+                   <span class="discount-tag">50% off! </span>
+                   <a href="{% url 'index' %}" class="btn btn-primary">Enroll Now</a>
+                 </div>
+               </div>
+             </div>
+             <div class="col-md-4">
+               <div class="card p-3 mb-3">
+                 <img src="https://analyticsdrift.com/wp-content/uploads/2022/10/Top-youTube-channels-on-python-programming.jpg" class="img-sec img-thumbnail">
+                 <div class="card-body">
+                   <h5 class="card-title">Python</h5>
+                   <p class="card-text">Python works on different platforms.web development (server-side),
+                    software development,
+                    mathematics,
+                    system scripting. </p>
+                   <span class="discount-tag"> 50% off! <style media="screen">
+                    /* Existing styles */
+
+                    .discount-tag {
+                      background-color: #e79a3c;
+                      color: white;
+                      font-weight: bold;
+                      padding: 5px 10px;
+                      border-radius: 5px;
+                      margin-bottom: 10px;
+                      display: inline-block;
+                      position: absolute;
+                  top: 10px;
+                  right: 10px;
+                  transform: rotate(-20deg);
+                  font-size: 16px;
+                  letter-spacing: 1px;
+                  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+                    }</style>
+                    </span> <!-- Added discount tag -->
+                   <a href="#" class="btn btn-primary">Enroll Now</a>
+                 </div>
+               </div>
+             </div>
+             <div class="col-md-4">
+               <div class="card p-3 mb-3">
+                 <img src="https://codeberryschool.com/blog/wp-content/uploads/2021/08/cover-1.png" class="img-sec img-thumbnail">
+                 <div class="card-body">
+                   <h5 class="card-title">JavaScript</h5>
+                   <p class="card-text">JavaScript is the world's most popular programming language.
+                    JavaScript is the programming language of the Web.</p>
+                   <span class="discount-tag">50% off! <style media="screen">
+                    /* Existing styles */
+
+                    .discount-tag {
+                      background-color: #e79a3c;
+                      color: white;
+                      font-weight: bold;
+                      padding: 5px 10px;
+                      border-radius: 5px;
+                      margin-bottom: 10px;
+                      display: inline-block;
+                      position: absolute;
+                  top: 10px;
+                  right: 10px;
+                  transform: rotate(-20deg);
+                  font-size: 16px;
+                  letter-spacing: 1px;
+                  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+                    }</style>
+                    </span> <!-- Added discount tag -->
+                   <a href="#" class="btn btn-primary">Enroll Now</a>
+                 </div>
+               </div>
+               </div>
+               </div>
+
+           </div>
+          </div>
+
+
+        </div>
+      </div>
+      <!--This section done by vamsi anthti-->
+      <div class="container text-center mt-5 mb-5">
+        <a href="#" class="fa fa-twitter mr-5 p-1"></a>
+        <a href="#" class="fa fa-linkedin mr-5 p-1"></a>
+        <a href="#" class="fa fa-youtube mr-5 p-1"></a>
+      </div>
+      <!--This section done by Gayathri Olla -->
+      <div>
+        <div class="bubble"></div>
+        <div class="bubble"></div>
+        <div class="bubble"></div>
+        <div class="bubble"></div>
+        <div class="bubble"></div>
+        <div class="bubble"></div>
+        <div class="bubble"></div>
+        <div class="bubble"></div>
+        <div class="bubble"></div>
+        <div class="bubble"></div>
+        <div class="bubble"></div>
+        <div class="bubble"></div>
+        <div class="bubble"></div>
+        <div class="bubble"></div>
+        <div class="bubble"></div>
+        <div class="bubble"></div>
+      </div>
+</body>
+</html>

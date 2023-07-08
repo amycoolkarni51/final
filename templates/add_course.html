@@ -1,0 +1,302 @@
+<!--Course Form with Dashboard overview-->
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+    <!--Bootstrap CSS-(cdnlines)-->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.6.2/dist/css/bootstrap.min.css">
+
+    <!-- icons -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+
+    <!--Icon Link (setting & Logout work)-->
+    <link href='https://unpkg.com/boxicons@2.0.7/css/boxicons.min.css' rel='stylesheet'>
+
+    <title>Dashboard</title>
+
+</head>
+<style>
+    /*Navbar Content Modify*/ 
+    .navbar-brand {
+        font-family: 'Gill Sans';
+        font-size: 2em;
+        font-weight: bold;
+
+    }
+
+    /*Dashboard Contant Modify*/
+     .nav-item {
+        position: relative;
+        top: 10px;
+        margin-left: -5px;
+        color: black;
+    }
+
+    /*Dashboard Icon Modificati*/ 
+    nav .fas {
+        position: relative;
+        width: 50px;
+        height: 40px;
+        top: 14px;
+        font-size: 20px;
+        text-align: center;
+        text-decoration: none;
+        color: black;
+    }
+
+    /*nav slidebar all button hover*/ 
+    .nav-item:hover {
+        background: linear-gradient(to top left, #ffccff 0%, #00ff00 100%);
+    }
+
+    /*body color*/ 
+    body {
+        background: linear-gradient(to right, rgb(110, 146, 155), rgb(148, 141, 43));
+    }
+
+    button[id]:hover {
+        background: linear-gradient(to top left, #ffccff 0%, #8c00ff 100%);
+    }
+
+    /*course form modify*/ 
+    section {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        width: 100%;
+        background-position: center;
+        background-size: cover;
+        margin-top: 40px;
+    }
+
+    /*in course form user logo image modification*/ 
+    img {
+        width: 100px;
+        position: relative;
+        top: -70px;
+        left: 33%;
+    }
+
+
+    /*course form box modification*/ 
+    .form-box {
+        position: relative;
+        padding: 40px;
+        background: transparent;
+        box-shadow: 0 8px 32px 0 rgba(31, 38, 135, 0.37);
+        border: 2px solid rgba(255, 255, 255, 0.5);
+        border-radius: 20px;
+        height: auto;
+
+    }
+
+    /*In Form welcome heading modify*/ 
+    h2 {
+        font-size: 2em;
+        color: #fff;
+        text-align: center;
+        margin-top: -60px;
+    }
+
+    /*in form input box modify*/ 
+    .inputbox {
+        position: relative;
+        margin: 20px 0;
+        width: auto;
+        border-bottom: 2px solid #270ca0;
+    }
+
+    /*in form input box label modification*/ 
+    .inputbox label {
+        position: absolute;
+        top: 50%;
+        left: 5px;
+        transform: translateY(-50%);
+        color: #110808;
+        font-size: 1em;
+        pointer-events: none;
+        transition: .5s;
+    }
+
+    /*input box if i write content then input (Ex- Course name, course dec, pdf link & video link) top*/ 
+    input:focus~label,
+    input:valid~label {
+        top: -4px;
+    }
+
+    /*in this form input box input mofification if not use the input box show*/ 
+    .inputbox input {
+        width: 100%;
+        height: 40px;
+        background: transparent;
+        border: none;
+        outline: none;
+        font-size: 1em;
+        padding: 0 35px 0 5px;
+        color: #c2c5c2;
+    }
+
+    /*Submit button modification*/ 
+    button {
+        width: 100%;
+        height: 40px;
+        border-radius: 40px;
+        background: #08d319;
+        border: none;
+        outline: none;
+        cursor: pointer;
+        font-size: 1em;
+        font-weight: 600;
+    }
+</style>
+
+<body>
+    <!--NAVBAR-->
+    <nav class="navbar navbar-dark fixed-top p-0 shadow" style="background-color: rgb(138, 8, 8);">
+        <a class="navbar-brand col-sm-3 col-md-2 mr-0" href="#">ACC COURSES ADMIN</a>
+    </nav>
+
+    <!--Slide bar-->
+
+    <!--Taken Div in div i divided two part-->
+    <div class="container-fluid" style="margin-top: 40px;">
+        <div class="row">
+            <!--div class="col-md-2 bg-light" style="height: auto">
+                <nav class="slidebar py-5 d-print-none"-->
+
+                    <!--ul class="nav flex-column" style="margin-top:-10px;"-->
+                        <!--in Slidebar Button-->
+
+                        <!--Dashboard btn-->
+                        <!--li class="nav-item">
+                            <a href="das.html"><i class="fas fa-tachometer"></i><span
+                                    class="nav-item"><b>Dashboard</b></span></a>
+                        </li-->
+
+                        <!--My Profile-->
+                        <!--li class="nav-item">
+                            <a href="#"><i class="fas fa-user"></i><span class="nav-item"><b>My Profile</b></span></a>
+                        </li-->
+
+                        <!--Course Btn-->
+                        <!--li class="nav-item">
+                            <a href="course.html"><i class="fas fa-accessible-icon"></i><span
+                                    class="nav-item"><b>Courses</b></span></a>
+                        </li-->
+
+                        <!--Students Btn-->
+                        <!--li class="nav-item">
+                            <a href="#"><i class="fas fa-users"></i><span class="nav-item"><b>Students</b></span></a>
+                        </li-->
+
+                        <!--Settings Btn-->
+                        <!--li class="nav-item">
+                            <a href="#"><i class='fas fa-book'></i><span class="nav-item"><b>Settings</b></span></a-->
+
+                            <!--Feedback Btn-->
+                        <!--li class="nav-item">
+                            <a href="#"><i class='fas fa-accessible-icon'></i><span
+                                    class="nav-item"><b>Feedback</b></span></a>
+                        </li-->
+
+                        <!--Change password-->
+                        <!--li class="nav-item">
+                            <a href="#"><i class='fas fa-key'></i><span class="nav-item"><b>Change
+                                        Password</b></span></a>
+                        </li-->
+
+                        <!--Logout Btn-->
+                        <!--li class="nav-item">
+                            <a href="#"><i class='fas fa-sign-out'></i><span class="nav-item"><b>Log out</b></span></a>
+                        </li-->
+                    <!--/ul>
+                </nav>
+            </div-->
+            <!--Slidebar End-->
+
+
+
+            <!--Div 2nd Part-->
+            <div class="col-md-10">
+                <section>
+                    <div class="form-box">
+                        <div class="form-value">
+
+                            <!--In course Form given on user logo-->
+                            <img src="https://openclipart.org/image/2400px/svg_to_png/247320/abstract-user-flat-4.png"
+                                alt="">
+                            <form action="" method="POST">
+                                {% csrf_token %}
+                                <!--Welcome page-->
+                                <h2 class="text-danger">Welcome</h2>
+
+                                <!--Course Name-->
+                                <div class="inputbox">
+                                    <input type="text" name="c_name" required>
+                                    <label for="">Course Name</label>
+                                </div>
+
+                                <!--Course Desc-->
+                                <div class="inputbox">
+                                    <input type="text" name="c_desc" required>
+                                    <label for="">Course Description</label>
+                                </div>
+
+                                <!--Pdf link-->
+                                <div class="inputbox">
+                                    <input type="text" name="s_pdf" required>
+                                    <label for="">Syllabus Pdf Url</label>
+                                </div>
+
+                                <!--Video link-->
+                                <div class="inputbox">
+                                    <input type="text" name="i_link" required>
+                                    <label for="">Introduction Video Url</label>
+                                </div>
+                                <!--Pdf link-->
+                                <div class="inputbox">
+                                    <input type="text" name="p_link" required>
+                                    <label for="">Course Pdf Url</label>
+                                </div>
+                                <!--Video link-->
+                                <div class="inputbox">
+                                    <input type="text" name="v_link" required>
+                                    <label for="">Course Video Url</label>
+                                </div>
+
+
+                                <!--Choose Course-->
+
+                                <label for="cname">Choose Course</label>
+                                <select name="s_course" id="course">
+                                    <option value="">Select Course</option>
+                                    <option value="Frontend">Frontend</option>
+                                    <option value="backend">backend</option>
+                                    <option value="database">Database</option>
+                                    <option value="marketing">Marketing</option>
+                                </select>
+                                <br>
+
+                                <!--Choose Files-->
+                                <label for="cname">Choose Course Image</label>
+                                <input type="file" id="files" name="filename" multiple> <br><br>
+
+                                <!--Submit Button-->
+                                <button id="smart" type="submit">Submit</button>
+
+                            </form>
+                            <!--Form Tag Closed-->
+                        </div>
+                    </div>
+            </div>
+        </div>
+    </div>
+    </div>
+    </section>
+    </div>
+
+
+</body>
+
+</html>

@@ -1,0 +1,153 @@
+<!-- Task :- Form this page to show the information of selected course with the help of page that courses team made
+     Added By :-  Shruti Bathe-->
+{% load static %}
+
+<!--Html Course Page overview page-->
+<!--This Page done by Narendra Chimata-->
+<html>
+<head>
+<meta charset="utf-8">
+<!--Cdnlines Code-->
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.6.2/dist/css/bootstrap.min.css">
+<script src="https://cdn.jsdelivr.net/npm/jquery@3.6.3/dist/jquery.slim.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.1/dist/umd/popper.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@4.6.2/dist/js/bootstrap.bundle.min.js"></script>
+    <title>HTML</title>
+
+     <!-- <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css"> -->
+     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+     <link rel="stylesheet" href="{% static 'css/course_style.css' %}">
+     
+     <body>
+     
+     
+             <!---Navbar Start-->
+     
+             <nav class="navbar navbar-expand-lg " style="background:transparent; justify-content: space-between;">
+               <a class="navbar-brand" href="" target="_blank"><h5 class="text-box"><img src="https://media.licdn.com/dms/image/C560BAQETm0mhlZFeqQ/company-logo_200_200/0/1675503582524?e=2147483647&v=beta&t=FlvlvidSDyNqpgt-6Okq1I6wb1a-midaUKx3KJQgfJA"
+                   alt="navbarlogo" style="width:auto; height: 50px " />  Our Courses</h5></a>
+     
+                 
+     
+                     
+                     <div class="navbar-nav" style="margin-left: 20px;" >
+                       <!--All Course Button-->
+                     <ul class="navbar-nav " >
+                       <!--Frontend btn-->
+                     <li class="nav-item">
+                     <a class="bttn" aria-current="page" href="{% url 'frontend' %}"  >FrontEnd</a>
+                       </li>
+                       <!--Backend btn-->
+                       <li class="nav-item">
+                         <a class="bttn" aria-current="page" href="{% url 'backend' %}" >Backend</a>
+                       </li>
+                       <!--database btn-->
+                       <li class="nav-item">
+                         <a class="bttn " aria-current="page" href="{% url 'database' %}" >Database</a>
+                       </li>
+                       <!--marketing btn-->
+                       <li class="nav-item">
+                         <a class="bttn  " aria-current="page" href="{% url 'marketing' %}" >Marketing</a>
+                       </li>
+                   </ul>
+                 </div>
+             </nav>
+        <!--Navbar End-->
+        <!--  Content Image-->
+        {% for x in result %}
+          <div class="container">
+            <img src={{x.8}}
+            alt="" style="width:80%;height:500; margin-left: 80;">
+
+
+          </div>
+          
+          <center>
+          <h2>About {{x.1}} Course</h2>
+        </center>
+          <div class="container">
+            <div class="row">
+              <div class="col-12">
+                <!---Overview Paragraph-->
+                <p calss="p-4">{{x.2}}</p>
+            </div>
+          </div>
+
+        </div>
+          <!---Overview Paragraph-->
+            <div class="container" style=" height:auto; border: 1px solid;">
+                <div class="row">
+                <div class="col-8">
+                  <marquee width="60%" direction="top" height="80px">
+                    <h2>Register now ! Only few seats remaining</h2>
+                  </marquee>
+
+                </div>
+                <div class="col-4">
+                      <!--With Icon Read More Button-->
+                        <center style="font-size: 3vw; font-family: serif; color:black;">
+                            <a href="{% url 'registeration' %}" class="btn"><i class="fas fa-book"></i> &nbsp; Register Here</a>
+                        </center>
+
+                </div>
+            </div>
+            </div>
+            <!--info section starts-->
+            <div class="container">
+                <div class="row">
+                    <div class="col-md-6">
+                      <h3 class=" mt-5 ">Let's make your Career in {{x.1}}</h3>
+                      <p>Learn Professional {{x.1}} Course & Live Project Training in your city – MAHARASHTRA</p>
+                      <ul class="text" style="color: black;">
+
+                            <li>100% Job assistance</li>
+                            <li>Be a Google certified</li>
+                            <li>Learn from industry experts</li>
+                            <li>Unlimited Practical Hours</li>
+                            <li>Special Class for Personality Development & Interview Questionnaire</li>
+                            <li>Work with programming languages and enhance skills </li>
+                            <li>Learn concepts of {{x.1}}</li>
+                          <!--Syllabus btn-->
+                          
+
+                            <center style="text-align: start;">
+                                <a href={{x.3}} class="bttn " style="text-align: start;"><i class="fas fa-book"></i> &nbsp; View Syllabus</a>
+                            </center>
+                        </ul>
+                    </div>
+                    <!--info section ends-->
+
+                    <!--Content Right Side Image-->
+                    <div class="col-md-5">
+                        <img class="mt-5" src="https://media.tenor.com/sfp8nf9UrZcAAAAM/uwu-cat.gif"  alt="" style="width:100%;">
+                    </div>
+                </div>
+            </div>
+            <h1 class="font-weight-bold mt-6 text-center">{{x.1}} Classes Here!!</h1>
+              <div class="row mt-2 justify-content-center">
+                <!--Youtube Video-->
+                <div class="mr-2 mb-5 mt-5" style="float: left;">
+                  <iframe width="560" height="315" src={{x.4}} title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
+                </div>
+                <!--div class="ml-2 mb-5 mt-5" style="float: right;">
+                    <iframe width="560" height="315" src="" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
+                </div-->
+              </div>
+
+              
+        <div class="wrapper">
+          <span class="wrapper"></span>
+          <span class="wrapper"></span>
+          <span class="wrapper"></span>
+          <span class="wrapper"></span>
+          <span class="wrapper"></span>
+          <span class="wrapper"></span>
+          <span class="wrapper"></span>
+          <span class="wrapper"></span>
+          <span class="wrapper"></span>
+          <span class="wrapper"></span>
+        </div>
+        {% endfor %}
+</body>
+</html>

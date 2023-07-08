@@ -1,0 +1,1501 @@
+{% load static %}
+<html>
+  <head>
+    <title></title>
+    <meta charset="utf-8">
+  <!-- <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.6.2/dist/css/bootstrap.min.css">
+  <script src="https://cdn.jsdelivr.net/npm/jquery@3.6.4/dist/jquery.slim.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.1/dist/umd/popper.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.6.2/dist/js/bootstrap.bundle.min.js"></script> -->
+
+    <!-- font awesome link -->
+            <link href="https://fonts.googleapis.com/css?family=Karla" rel="stylesheet">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css"/>
+
+<style>
+   * {
+    box-sizing:border-box
+    }
+    .slideshow-container
+     {
+      max-width: 1000px; position: relative;
+     }
+
+#i1{
+  margin-top: -5px;
+  margin-left: 10px;
+}
+/* nav{
+  width: 350px;
+} */
+@import url('https://fonts.googleapis.com/css2?family=Open+Sans:wght@300;400;500&family=Poppins:wght@300;400;500;600;700;800;900&display=swap');
+*{
+  margin: 0;
+  padding: 0;
+  outline: none;
+  border: none;
+  text-decoration: none;
+  box-sizing: border-box;
+  font-family: "Poppins",sans-serif;
+}
+
+body{
+  background: #008080;
+}
+
+.container{
+  display: flex;
+}
+
+nav{
+  position: relative;
+  top: 0;
+  bottom: 0;
+  height: 138vh;
+  left: 0;
+  background: #fff;
+  width: 320px;
+  overflow: hidden;
+  box-shadow: 0 20px 35px rgba(0,0,0,0.1);
+}
+
+.logo{
+  text-align: center;
+  display: flex;
+  margin: 10px 0 0 10px;
+}
+
+.logo img{
+  width: 30px;
+  height: 30px;
+  border-radius: 50%;
+}
+
+.logo span{
+  font-weight: bold;
+  padding-left: 15px;
+  font-size: 15px;
+  text-transform: uppercase;
+}
+
+a{
+  position: relative;
+  color: rgba(84,83,83);
+  font-size: 14px;
+  display: table;
+  width: 280px;
+  padding: 10px;
+}
+
+nav .fas{
+  position: relative;
+  width: 70px;
+  height: 40px;
+  top: 14px;
+  font-size: 20px;
+  text-align: center;
+  text-decoration: none;
+}
+
+.nav-item{
+  position: relative;
+  top: 10px;
+  margin-left: -5px;
+}
+
+a:hover{
+  background:	#c71585;
+  color: #fff;
+}
+
+.logout{
+  position: absolute;
+  bottom: 0;
+}
+
+/* ====================== */
+
+nav1{
+  position: relative;
+  top: 0;
+  bottom: 0;
+  height: 138vh;
+  left: 0;
+  background: #fff;
+  width: 480px;
+  overflow: hidden;
+  box-shadow: 0 20px 35px rgba(0,0,0,0.1);
+}
+
+.logo{
+  text-align: center;
+  display: flex;
+  margin: 10px 0 0 10px;
+}
+
+.logo img{
+  width: 30px;
+  height: 30px;
+  border-radius: 50%;
+}
+
+.logo span{
+  font-weight: bold;
+  padding-left: 15px;
+  font-size: 15px;
+  text-transform: uppercase;
+}
+
+a{
+  position: relative;
+  color: rgba(84,83,83);
+  font-size: 14px;
+  display: table;
+  width: 280px;
+  padding: 10px;
+}
+
+nav1 .fas{
+  position: relative;
+  width: 70px;
+  height: 40px;
+  top: 14px;
+  font-size: 20px;
+  text-align: center;
+  text-decoration: none;
+}
+
+.nav1-item{
+  position: relative;
+  top: 10px;
+  margin-left: -5px;
+}
+
+a:hover{
+  background:	#c71585;
+  color: #fff;
+}
+
+.logout{
+  position: absolute;
+  bottom: 0;
+}
+
+
+/* =========== */
+nav3{
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  height: 125vh;
+  left: 0;
+  background: #fff;
+  width: 240px;
+  overflow: hidden;
+  box-shadow: 0 20px 35px rgba(0,0,0,0.1);
+}
+
+.logo{
+  text-align: center;
+  display: flex;
+  margin: 10px 0 0 10px;
+}
+
+.logo img{
+  width: 30px;
+  height: 30px;
+  border-radius: 50%;
+}
+
+.logo span{
+  font-weight: bold;
+  padding-left: 15px;
+  font-size: 15px;
+  text-transform: uppercase;
+}
+
+a{
+  position: relative;
+  color: rgba(84,83,83);
+  font-size: 14px;
+  display: table;
+  width: 280px;
+  padding: 10px;
+  text-indent: inherit;
+}
+
+nav3 .fas{
+  position: relative;
+  width: 70px;
+  height: 40px;
+  top: 14px;
+  font-size: 20px;
+  text-align: center;
+}
+
+.nav3-item{
+  position: relative;
+  top: 10px;
+  margin-left: -5px;
+}
+
+a:hover{
+  background:	#c71585;
+  color: #fff;
+}
+
+.logout{
+  position: absolute;
+  bottom: 0;
+}
+
+
+/* =========================== */
+
+nav4{
+  position: relative;
+  top: 0;
+  bottom: 0;
+  height: 164vh;
+  left: 0;
+  background: #fff;
+  width: 600px;
+  overflow: hidden;
+  box-shadow: 0 20px 35px rgba(0,0,0,0.1);
+}
+
+.logo{
+  text-align: center;
+  display: flex;
+  margin: 10px 0 0 10px;
+}
+
+.logo img{
+  width: 30px;
+  height: 30px;
+  border-radius: 50%;
+}
+
+.logo span{
+  font-weight: bold;
+  padding-left: 15px;
+  font-size: 15px;
+  text-transform: uppercase;
+}
+
+a{
+  position: relative;
+  color: rgba(84,83,83);
+  font-size: 14px;
+  display: table;
+  width: 280px;
+  padding: 10px;
+}
+
+nav4 .fas{
+  position: relative;
+  width: 70px;
+  height: 40px;
+  top: 14px;
+  font-size: 20px;
+  text-align: center;
+  text-decoration: none;
+}
+
+.nav4-item{
+  position: relative;
+  top: 10px;
+  margin-left: -5px;
+}
+
+a:hover{
+  background:	#c71585;
+  color: #fff;
+}
+
+.logout{
+  position: absolute;
+  bottom: 0;
+}
+
+
+/* ========================= */
+
+nav2{
+  position: relative;
+  top: 0;
+  bottom: 0;
+  height: 158vh;
+  left: 0;
+  background: #fff;
+  width: 680px;
+  overflow: hidden;
+  box-shadow: 0 20px 35px rgba(0,0,0,0.1);
+}
+
+.logo{
+  text-align: center;
+  display: flex;
+  margin: 10px 0 0 10px;
+}
+
+.logo img{
+  width: 30px;
+  height: 30px;
+  border-radius: 50%;
+}
+
+.logo span{
+  font-weight: bold;
+  padding-left: 15px;
+  font-size: 15px;
+  text-transform: uppercase;
+}
+
+a{
+  position: relative;
+  color: rgba(84,83,83);
+  font-size: 14px;
+  display: table;
+  width: 280px;
+  padding: 10px;
+}
+
+nav2 .fas{
+  position: relative;
+  width: 70px;
+  height: 40px;
+  top: 14px;
+  font-size: 20px;
+  text-align: center;
+  text-decoration: none;
+}
+
+.nav2-item{
+  position: relative;
+  top: 10px;
+  margin-left: -5px;
+}
+
+a:hover{
+  background:	#c71585;
+  color: #fff;
+}
+
+.logout{
+  position: absolute;
+  bottom: 0;
+}
+
+
+/* ======================= */
+
+nav5{
+  position: relative;
+  top: 0;
+  bottom: 0;
+  height: 151vh;
+  left: 0;
+  background: #fff;
+  width: 500px;
+  overflow: hidden;
+  box-shadow: 0 20px 35px rgba(0,0,0,0.1);
+}
+
+.logo{
+  text-align: center;
+  display: flex;
+  margin: 10px 0 0 10px;
+}
+
+.logo img{
+  width: 30px;
+  height: 30px;
+  border-radius: 50%;
+}
+
+.logo span{
+  font-weight: bold;
+  padding-left: 15px;
+  font-size: 15px;
+  text-transform: uppercase;
+}
+
+a{
+  position: relative;
+  color: rgba(84,83,83);
+  font-size: 14px;
+  display: table;
+  width: 280px;
+  padding: 10px;
+}
+
+nav5 .fas{
+  position: relative;
+  width: 70px;
+  height: 40px;
+  top: 14px;
+  font-size: 20px;
+  text-align: center;
+  text-decoration: none;
+}
+
+.nav5-item{
+  position: relative;
+  top: 10px;
+  margin-left: -5px;
+}
+
+a:hover{
+  background:	#c71585;
+  color: #fff;
+}
+
+.logout{
+  position: absolute;
+  bottom: 0;
+}
+
+
+/* ============================= */
+
+nav6{
+  position: relative;
+  top: 0;
+  bottom: 0;
+  height: 161vh;
+  left: 0;
+  background: #fff;
+  width: 420px;
+  overflow: hidden;
+  box-shadow: 0 20px 35px rgba(0,0,0,0.1);
+}
+
+.logo{
+  text-align: center;
+  display: flex;
+  margin: 10px 0 0 10px;
+}
+
+.logo img{
+  width: 30px;
+  height: 30px;
+  border-radius: 50%;
+}
+
+.logo span{
+  font-weight: bold;
+  padding-left: 15px;
+  font-size: 15px;
+  text-transform: uppercase;
+}
+
+a{
+  position: relative;
+  color: rgba(84,83,83);
+  font-size: 14px;
+  display: table;
+  width: 280px;
+  padding: 10px;
+}
+
+nav6 .fas{
+  position: relative;
+  width: 70px;
+  height: 40px;
+  top: 14px;
+  font-size: 20px;
+  text-align: center;
+  text-decoration: none;
+}
+
+.nav6-item{
+  position: relative;
+  top: 10px;
+  margin-left: -5px;
+}
+
+a:hover{
+  background:	#c71585;
+  color: #fff;
+}
+
+.logout{
+  position: absolute;
+  bottom: 0;
+}
+
+
+/* ========================= */
+
+nav7{
+  position: relative;
+  top: 0;
+  bottom: 0;
+  height: 142vh;
+  left: 0;
+  background: #fff;
+  width: 500px;
+  overflow: hidden;
+  box-shadow: 0 20px 35px rgba(0,0,0,0.1);
+}
+
+.logo{
+  text-align: center;
+  display: flex;
+  margin: 10px 0 0 10px;
+}
+
+.logo img{
+  width: 30px;
+  height: 30px;
+  border-radius: 50%;
+}
+
+.logo span{
+  font-weight: bold;
+  padding-left: 15px;
+  font-size: 15px;
+  text-transform: uppercase;
+}
+
+a{
+  position: relative;
+  color: rgba(84,83,83);
+  font-size: 14px;
+  display: table;
+  width: 280px;
+  padding: 10px;
+}
+
+nav7 .fas{
+  position: relative;
+  width: 70px;
+  height: 40px;
+  top: 14px;
+  font-size: 20px;
+  text-align: center;
+  text-decoration: none;
+}
+
+.nav7-item{
+  position: relative;
+  top: 10px;
+  margin-left: -5px;
+}
+
+a:hover{
+  background:	#c71585;
+  color: #fff;
+}
+
+.logout{
+  position: absolute;
+  bottom: 0;
+}
+
+/* ======================== */
+
+nav8{
+  position: relative;
+  top: 0;
+  bottom: 0;
+  height: 156.5vh;
+  left: 0;
+  background: #fff;
+  width: 480px;
+  overflow: hidden;
+  box-shadow: 0 20px 35px rgba(0,0,0,0.1);
+}
+
+.logo{
+  text-align: center;
+  display: flex;
+  margin: 10px 0 0 10px;
+}
+
+.logo img{
+  width: 30px;
+  height: 30px;
+  border-radius: 50%;
+}
+
+.logo span{
+  font-weight: bold;
+  padding-left: 15px;
+  font-size: 15px;
+  text-transform: uppercase;
+}
+
+a{
+  position: relative;
+  color: rgba(84,83,83);
+  font-size: 14px;
+  display: table;
+  width: 280px;
+  padding: 10px;
+}
+
+nav8 .fas{
+  position: relative;
+  width: 70px;
+  height: 40px;
+  top: 14px;
+  font-size: 20px;
+  text-align: center;
+  text-decoration: none;
+}
+
+.nav8-item{
+  position: relative;
+  top: 10px;
+  margin-left: -5px;
+}
+
+a:hover{
+  background:	#c71585;
+  color: #fff;
+}
+
+.logout{
+  position: absolute;
+  bottom: 0;
+}
+
+/* ============================== */
+
+nav9{
+  position: relative;
+  top: 0;
+  bottom: 0;
+  height: 140.5vh;
+  left: 0;
+  background: #fff;
+  width: 540px;
+  overflow: hidden;
+  box-shadow: 0 20px 35px rgba(0,0,0,0.1);
+}
+
+.logo{
+  text-align: center;
+  display: flex;
+  margin: 10px 0 0 10px;
+}
+
+.logo img{
+  width: 30px;
+  height: 30px;
+  border-radius: 50%;
+}
+
+.logo span{
+  font-weight: bold;
+  padding-left: 15px;
+  font-size: 15px;
+  text-transform: uppercase;
+}
+
+a{
+  position: relative;
+  color: rgba(84,83,83);
+  font-size: 14px;
+  display: table;
+  width: 280px;
+  padding: 10px;
+}
+
+nav9 .fas{
+  position: relative;
+  width: 70px;
+  height: 40px;
+  top: 14px;
+  font-size: 20px;
+  text-align: center;
+  text-decoration: none;
+}
+
+.nav9-item{
+  position: relative;
+  top: 10px;
+  margin-left: -5px;
+}
+
+a:hover{
+  background:	#c71585;
+  color: #fff;
+}
+
+.logout{
+  position: absolute;
+  bottom: 0;
+}
+
+/* ============================== */
+
+nav0{
+  position: relative;
+  top: 0;
+  bottom: 0;
+  height: 127vh;
+  left: 0;
+  background: #fff;
+  width: 520px;
+  overflow: hidden;
+  box-shadow: 0 20px 35px rgba(0,0,0,0.1);
+}
+
+.logo{
+  text-align: center;
+  display: flex;
+  margin: 10px 0 0 10px;
+}
+
+.logo img{
+  width: 30px;
+  height: 30px;
+  border-radius: 50%;
+}
+
+.logo span{
+  font-weight: bold;
+  padding-left: 15px;
+  font-size: 15px;
+  text-transform: uppercase;
+}
+
+a{
+  position: relative;
+  color: rgba(84,83,83);
+  font-size: 14px;
+  display: table;
+  width: 280px;
+  padding: 10px;
+}
+
+nav0 .fas{
+  position: relative;
+  width: 70px;
+  height: 40px;
+  top: 14px;
+  font-size: 20px;
+  text-align: center;
+  text-decoration: none;
+}
+
+.nav0-item{
+  position: relative;
+  top: 10px;
+  margin-left: -5px;
+}
+
+a:hover{
+  background:	#104f55;
+  color: #fff;
+}
+
+.logout{
+  position: absolute;
+  bottom: 0;
+}
+
+/* main section */
+
+.main{
+  position: relative;
+  padding: 10px;
+  width: 100%;
+
+}
+
+.main-top{
+  display: flex;
+  width: 100%;
+}
+
+.main-top i{
+  position: absolute;
+  right: 0;
+  margin: 10px 30px;
+  color: rgba(11,109,109);
+  cursor: pointer;
+}
+
+.main-course{
+  display: flex;
+  margin-top: 20px;
+}
+
+.main-course .card{
+  width: 25%;
+  margin: 10px;
+  background: #fff;
+  text-align: center;
+  border-radius: 20px;
+  padding: 10px;
+  box-shadow: 0 20px 35px rgba(0,0,0,0.1);
+}
+
+.main-course .card h3{
+  margin: 10px;
+  text-transform: capitalize;
+}
+
+.main-course .card p{
+  font-size: 12px;
+}
+
+.main-course .card button{
+  background: blue;
+  color: #fff;
+  padding: 7px 15px;
+  border-radius: 10px;
+  margin-top: 15px;
+  cursor: pointer;
+}
+
+.card:hover{
+  background: rgba(219,112,147,0.856);
+}
+
+.main-course .card i{
+  font-size: 22px;
+  padding: 10px;
+}
+
+.html{
+  color: rgba(24,94,54);
+}
+
+.css{
+  color: rgba(24,94,54);
+}
+
+.js{
+  color: rgba(24,94,54);
+}
+
+h1{
+  color: #fff;
+  font-size: 35px;
+  font-weight: bold;
+}
+
+
+
+#course{
+  padding: 20px;
+  background-image: url(../images/course-bg.svg);
+  background-position: top;
+  background-repeat: repeat;
+  background-size: cover;
+}
+
+.featured-course-container{
+  display: flex;
+  padding: 30px 30px;
+  margin-left: 10px;
+}
+
+.featured-course-video{
+  display: flex;
+  flex: 2;
+  align-items: center;
+}
+
+.featured-course-video iframe{
+  /* width: 90%; */
+  border-radius: 20px;
+  box-shadow: 0 0 8 #626262;
+  margin-right: 30px;
+}
+
+.featured-course-content{
+  flex: 6;
+}
+
+.gray{
+  color: #800080;
+  font-size: 20px;
+}
+
+.yellow{
+  color: #dc143c;
+  font-size: 15px;
+}
+
+
+.featured-course-title{
+  font-size: 1.8rem;
+  text-transform: capitalize;
+  color: 	#800000;
+  font-weight: bold;
+}
+
+.featured-course-desc{
+  margin: 10px 0px;
+  color: #000000;
+  line-height: 30px;
+  font-size: 20px;
+  font-weight: bold;
+}
+
+.featured-course-icons-container{
+  margin: 30px 0px;
+}
+
+.icons-row{
+  display: flex;
+  justify-content: flex-start;
+}
+
+.icon-heading{
+  flex: 1;
+  text-transform: uppercase;
+  font-size: 18px;
+  margin-bottom: 12px;
+  font-weight: bold;
+  letter-spacing: 1px;
+  /* color: #626262; */
+}
+
+
+.icon-heading i{
+  color: #3B4FE4;
+}
+
+.btn-blue{
+  background-color: #3B4FE4;
+  border: 1px solid #3B4FE4;
+  color: #ffffff;
+}
+
+button{
+  background: blue;
+  color: #fff;
+  padding: 7px 15px;
+  border-radius: 10px;
+  margin-top: 15px;
+  cursor: pointer;
+}
+
+.more-course-container{
+  display: flex;
+  padding: 60px 30px;
+  justify-content: space-between;
+}
+
+.course{
+  display: flex;
+  flex-direction: column;
+  max-width: 380px;
+  align-items: center;
+  margin: 10px;
+  border-radius: 20px;
+  background-color: #fff;
+  box-shadow: 0 2px 4px 0 rgba(0,0,0,0.2),0 2px 10px 0 rgba(0,0,0,0.19);
+}
+
+.course-img img{
+  border-radius: 20px;
+  overflow: hidden;
+}
+
+
+.course-body{
+  margin-bottom: 10px;
+}
+
+
+#x1{
+  margin-right: -200px;
+}
+
+#x2{
+  margin-top: 10px;
+  margin-right: -5px;
+}
+
+#x3{
+  margin-top: 120px;
+}
+
+#x4{
+  margin-left: 40px;
+}
+
+
+#e1{
+  color: #fff;
+  font-size: 20px;
+  font-weight: bold;
+}
+
+.red{
+  color: lime;
+  font-size: 20px;
+  font-weight: bold;
+}
+
+
+#l2{
+  margin-top: 30px;
+}
+
+
+#l1{
+  margin-top: 30px;
+}
+
+#e2{
+  color: #008000;
+  font-size: 20px;
+  font-weight: bold;
+}
+
+.white{
+  color: #000080;
+  font-size: 20px;
+  font-weight: bold;
+}
+
+#e3{
+  color: blue;
+  font-size: 20px;
+  font-weight: bold;
+}
+
+.green{
+  color: lime;
+  font-size: 20px;
+  font-weight: bold;
+}
+
+/* css course */
+
+.featured-course-container1{
+  display: flex;
+  padding: 30px 30px;
+  margin-right: -130px;;
+}
+
+.featured-course-video1{
+  display: flex;
+  flex: 2;
+  align-items: center;
+}
+
+.featured-course-video1 iframe{
+  /* width: 90%; */
+  border-radius: 20px;
+  box-shadow: 0 0 8 #626262;
+  margin-right: 30px;
+}
+
+.featured-course-content1{
+  flex: 6;
+}
+
+.more-course-container1{
+  display: flex;
+  padding: 20px 10px;
+  justify-content: space-between;
+}
+
+.course1{
+  display: flex;
+  flex-direction: column;
+  max-width: 380px;
+  max-height: 500px;
+  align-items: center;
+  margin: 10px;
+  border-radius: 20px;
+  background-color: #fff;
+  box-shadow: 0 2px 4px 0 rgba(0,0,0,0.2),0 2px 10px 0 rgba(0,0,0,0.19);
+}
+
+.course-img1 img{
+  border-radius: 20px;
+  overflow: hidden;
+}
+
+
+.course-body1{
+  margin-bottom: 10px;
+}
+
+.featured-course-title1{
+  font-size: 1.8rem;
+  text-transform: capitalize;
+  color: 	magenta;
+  font-weight: bold;
+}
+
+.featured-course-desc1{
+  margin: 10px 0px;
+  color: #000000;
+  line-height: 30px;
+  font-size: 20px;
+  font-weight: bold;
+}
+
+.featured-course-icons-container1{
+  margin: 30px 0px;
+}
+
+.icons-row1{
+  display: flex;
+  justify-content: flex-start;
+}
+
+.icon-heading1{
+  flex: 1;
+  text-transform: uppercase;
+  font-size: 18px;
+  margin-bottom: 12px;
+  font-weight: bold;
+  letter-spacing: 1px;
+  /* color: #626262; */
+}
+
+.icon-heading1 i{
+  color: #3B4FE4;
+}
+
+
+
+/* button course section ends here  */
+/*Slide show css start */
+
+
+.slider-frame{
+  overflow: hidden;
+  height: 350px;
+  width: 450px;
+  margin-left: 700px;
+  margin-top: 60px;
+  margin-right: 50px;
+
+}
+.text{
+  width: 600px;
+  position:fixed;
+  margin-left: 0dvb;
+
+}
+
+/*---------- SLIDE ANIMATION --------------*/
+
+
+@keyframes slide_animation{
+  0% {left:0px;}
+  10% {left:0px;}
+  20% {left:1200px;}
+  30% {left:1200px;}
+  40% {left: 2400px;}
+  50% {left: 2400px;}
+  60% {left: 1200px;}
+  70% {left: 1200px;}
+  80% {left: 0px;}
+  90% {left: 0px;}
+  100% {left:0px;}
+}
+
+@-webkit-keyframes slide_animation{
+  0% {left:0px;}
+  10% {left:0px;}
+  20% {left:1200px;}
+  30% {left:1200px;}
+  40% {left: 2400px;}
+  50% {left: 2400px;}
+  60% {left: 1200px;}
+  70% {left: 1200px;}
+  80% {left: 0px;}
+  90% {left: 0px;}
+  100% {left:0px;}
+}
+
+.slide-images{
+  width: 3600px;
+  height: 800px;
+  margin: 0 0 0 -2400px;
+  position: relative;
+  -webkit-animation-name: slide_animation;
+  animation-name: slide_animation;
+  -webkit-animation-duration: 33s;
+  animation-duration: 33s;
+  -webkit-animation-iteration-count: infinite;
+  animation-iteration-count: infinite;
+  -webkit-animation-direction: alternate;
+  animation-direction: alternate;
+  -webkit-animation-play-state: running;
+  animation-play-state: running;
+}
+
+.img-container{
+  height: 800px;
+  width: 1200px;
+  position: relative;
+  float: left;
+}
+
+/*slide show css ends */
+
+
+</style>
+
+<!--
+  added by -- vishal patil
+  date -- 08/07/2023
+  compiler dropdown list css
+-->
+
+<style>
+  /* Style The Dropdown Button */
+  .dropbtn2 {
+    background-color: #4CAF50;
+    color: white;
+    padding: 16px;
+    font-size: 16px;
+    border: none;
+    cursor: pointer;
+  }
+  
+  /* The container <div> - needed to position the dropdown content */
+  .dropdown {
+    position: relative;
+    display: inline-block;
+  }
+  
+  /* Dropdown Content (Hidden by Default) */
+  .dropdown-content {
+    display: none;
+    position: absolute;
+    background-color: #f9f9f9;
+    min-width: 160px;
+    box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
+    z-index: 1;
+  }
+  
+  /* Links inside the dropdown */
+  .dropdown-content a {
+    color: black;
+    padding: 12px 16px;
+    text-decoration: none;
+    display: block;
+  }
+  
+  /* Change color of dropdown links on hover */
+  .dropdown-content a:hover {background-color: #f1f1f1}
+  
+  /* Show the dropdown menu on hover */
+  .dropdown:hover .dropdown-content {
+    display: block;
+  }
+  
+  /* Change the background color of the dropdown button when the dropdown content is shown */
+  .dropdown:hover .dropbtn2 {
+    background-color: #3e8e41;
+  }
+</style>
+  </head>
+  <body>
+    <div class="container">
+    <nav0>
+      <ul>
+        <li><a href="#" class="logo"><img src="/static/img/logo.jpg" alt="">
+          <span class="nav-item">Student Dashboard</span></a></li>
+          <!-- User DroupDown-->
+
+      <!-- <div class="dropdown"> -->
+        
+    <!--li><a href="#" class="logo">
+  <button onclick="myFunction()" class="dropbtn" id="i1">{{ result.Full_Name }}</button-->
+  
+  
+  <!-- <div id="myDropdown" class="dropdown-content">
+    <a href="#home">Complete Profile</a>
+    <a href="#about"></a>
+    <a href="#contact"></a>
+  </div>
+</li> -->
+<!-- </div> -->
+
+        <!--user ends-->
+        <li><a href="{% url 'index' %}">
+          <i class="fas fa-home"></i>
+          <span class="nav-item">Home</span>
+        </a></li>
+        <li><a href="#">
+          <i class="fas fa-user"></i>
+          <span class="nav-item">Profile</span>
+        </a></li>
+        <li><a href="">
+          <i class="fas fa-address-card"></i>
+          <span class="nav-item">About</span>
+        </a></li>
+        <!--
+          added by -- vishal patil
+          date 08/07/2023
+          dropdown list for compiler
+        -->
+        <div class="dropdown">
+          <button class="dropbtn2" style="margin-left: 50px;">Compiler</button>
+          <div class="dropdown-content">
+            <a >Python Compiler</a>
+            <a href="#">Java Compiler</a>
+            <a href="#">JavaScript Compiler</a>
+            <a href="#">PHP Compiler</a>
+            <a href="#">CPP Compiler</a>
+            <a href="#">HTML,CSS Compiler</a>
+          </div>
+        </div>
+    
+      <li><a href="">
+        <i class="fas fa-user"></i>
+        <span class="nav-item">User</span>
+      </a></li>
+        <li><a href="{% url 'contact' %}"><i class="fas fa-question-circle"></i>
+        <span class="nav-item">Help</span>
+      </a></li>
+      <li><a href="{% url 'logout' %}" class="Logout"><i class="fas fa-sign-out-alt"></i>
+      <span class="nav-item">Logout</span>
+    </a></li>
+      </ul>
+    </nav0>
+
+    <!--User JavaScript-->
+
+    <script>
+/* When the user clicks on the button,
+toggle between hiding and showing the dropdown content */
+function myFunction() {
+  document.getElementById("myDropdown").classList.toggle("show");
+}
+
+// Close the dropdown if the user clicks outside of it
+window.onclick = function(event) {
+  if (!event.target.matches('.dropbtn')) {
+    var dropdowns = document.getElementsByClassName("dropdown-content");
+    var i;
+    for (i = 0; i < dropdowns.length; i++) {
+      var openDropdown = dropdowns[i];
+      if (openDropdown.classList.contains('show')) {
+        openDropdown.classList.remove('show');
+      }
+    }
+  }
+}
+</script>
+
+    <section class="main">
+
+        <div class="container-fluid">
+          <div class="row">
+            <div class="jumbotron" style="background-color: aliceblue; margin-trim: 10px;" >
+            <div class="col-mb-7">
+              <div class="text" style="font-size: larger; position: absolute;">
+                <h1 style="color: #000000;">Basic Courses info</h1>
+                <p style="text-align:center;">
+                The future of India will be shaped by today’s younge generation who need quality education through digital literacy, making them productive and self-reliant citizens.  'Digital literacy' is the skills required to achieve digital competence and use of Information and Communication Technology (ICT) for work, leisure, learning and
+             communication. It does not replace traditional forms of literacy, instead complements
+              and amplifies the skills that form the foundation of traditional forms.</p>
+        </div>
+
+            </div>
+            <div class="offset-md-1 col-mb-4">
+              <div class="slider-frame">
+                <div class="slide-images">
+                        <div class="img-container">
+                            <img src="{% static 'img/java_logo.png' %}" width="50%" height="40%">
+                        </div>
+                        <div class="img-container">
+                            <img src="{% static 'img/python.png' %}" width="50%" height="40%">
+                        </div>
+                        <div class="img-container">
+                            <img src="{% static 'img/c++.jpg' %}" width="50%" height="40%">
+                        </div>
+                        <div class="img-container">
+                          <img src="{% static 'img/mysql_logo.png' %}" width="50%" height="40%">
+                      </div>
+                </div>
+            </div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+
+      <div class="main-top">
+
+        <h1>My Courses</h1>
+        <i class="fas fa-user-cog"></i>
+      </div>
+      <div class="main-course">
+        {% for x in result %}
+        <div class="card">
+          <i class="fab fa-html5 html"></i>
+          <h3>{{x.8}}</h3>
+          <p>Join Over 1 lakh students</p>
+          <a href="{% url 'course_page' x.0 %}"> Continue </a>
+        </div>
+        {% endfor %}
+        <!--div class="card">
+          <i class="fab fa-css3 css"></i>
+          <h3>CSS</h3>
+          <p>Join Over 2.35 lakh students</p>
+          <button onclick="window.location.href = 'secondpage.html';">Continue</button>
+        </div>
+        <div class="card">
+          <i class="fab fa-js js"></i>
+          <h3>JavaScript</h3>
+          <p>Join Over 2 lakh students</p>
+          <button onclick="window.location.href = 'thirdpage.html';">Continue</button>
+        </div>
+        <div class="card">
+          <i class="fab fa-python python"></i>
+          <h3>Python</h3>
+          <p>Join Over 1.5 lakh students</p>
+          <button onclick="window.location.href = 'fourthpage.html';">Continue</button>
+        </div>
+      </div>
+
+      <div class="main-course">
+        <div class="card">
+          <i class="fab fa-java java"></i>
+          <h3>java</h3>
+          <p>Join Over 1 lakh students</p>
+          <button onclick="window.location.href = 'fifthpage.html';">Continue</button>
+        </div>
+        <div class="card">
+          <i class=""><img src="images\.net.jpg" width="50" height="35"></i>
+          <h3>Dot Net</h3>
+          <p>Join Over 2.35 lakh students</p>
+          <button onclick="window.location.href = 'sixpage.html';">Continue</button>
+        </div>
+        <div class="card">
+          <i class=""><img src="./images/Ai.jpg" width="50px" height="35px"></i>
+          <h3>AI</h3>
+          <p>Join Over 2 lakh students</p>
+          <button onclick="window.location.href = 'seventhpage.html';">Continue</button>
+        </div>
+        <div class="card">
+          <i class=""><img src="./images/aws.png" width="50px" height="35px"></i>
+          <h3>AWS</h3>
+          <p>Join Over 1.5 lakh students</p>
+          <button onclick="window.location.href = 'eigthpage.html';">Continue</button>
+        </div>
+      </div-->
+
+    </section>
+    </div>
+    <footer style="justify-content:baseline;background: #fff;border: 2px solid; font-family: var(--Josefin);text-align: center;flex:auto">
+      <div class="rights flex-row">
+        <h4 class="text-gray" style="font-size: 15px;">
+            Copyright ©2023 All rights reserved | Mhtechin
+            
+        </h4>
+    </div>
+    </footer>
+  </body>
+</html>

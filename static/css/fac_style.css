@@ -1,0 +1,56 @@
+/* Faculty CSS */
+:root {
+    --primary: #4ca60b;
+    --light: #F0FBFC;
+    --dark: #181d38;
+}
+
+/* Container Title Name */
+.container-name {
+    position: relative;
+    display: inline-block;
+    text-transform: uppercase;
+}
+
+.container-name::before {
+    position: absolute;
+    content: "";
+    width: calc(100% + 80px);
+    height: 4px;
+    top: 6px;
+    left: -40px;
+    background: var(--primary);
+    z-index: -8;
+}
+
+.container-name::after {
+    position: absolute;
+    content: "";
+    width: calc(100% + 120px);
+    height: 4px;
+    bottom: 7px;
+    left: -60px;
+    background: var(--primary);
+    z-index: -8;
+}
+
+.container-name.text-start::before {
+    width: calc(100% + 40px);
+    left: 0;
+}
+
+.container-name.text-start::after {
+    width: calc(100% + 60px);
+    left: 0;
+}
+
+/* Team img*/
+.team-content img {
+    transition: .5s;
+}
+
+.team-content:hover img {
+    transform: scale(1.1);
+}
+
+

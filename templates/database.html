@@ -1,0 +1,199 @@
+<!-- 
+    Task :- django for tag to fetch the database course infromation on html page 
+    Added By :- Shruti Bathe  -->
+{% load static %}
+
+<!-- Database done by Siddaiah-->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+   <meta charset="UTF-8">
+   <meta http-equiv="X-UA-Compatible" content="IE=edge">
+   <meta name="viewport" content="width=device-width, initial-scale=1.0">
+   <title>Database_Page</title>
+   <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.6.2/dist/css/bootstrap.min.css">
+   <script src="https://cdn.jsdelivr.net/npm/jquery@3.6.4/dist/jquery.slim.min.js"></script>
+   <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.1/dist/umd/popper.min.js"></script>
+   <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.6.2/dist/js/bootstrap.bundle.min.js"></script>
+<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+<link rel="stylesheet" href="{% static 'css/course_style.css' %}">
+
+<style media="screen">
+   .body{
+    background:blanchedalmond;
+    block-size: 100%;
+    width: 100%;
+  }
+
+  .h1-carousel{
+    color:rgb(158, 4, 4);
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
+    font-weight: bolder;
+  }
+  .paragraph-carousel{
+    color: rgb(9, 9, 9);
+    font-weight: 10%;
+    font-weight: bolder;
+    font-family: Arial, Helvetica, sans-serif;
+  }
+  .button{
+    color: rgb(9, 9, 9);
+    font-weight: bolder;
+    font-family: Arial, Helvetica, sans-serif;
+  }
+  .carousel-item img{
+    height:550px;
+    width: 100%;
+    
+  }
+  .carousel-inner{
+    padding: 20px;
+    margin: auto;
+  }
+
+      .img-sec{
+        width: 100%;
+        height: 160px;
+        
+      }
+      .img-sec:hover{
+        transform: scale(1.3);
+        z-index: 2;
+      }
+
+    
+    .box{
+    height:280px;
+    width:250px;
+    border: 8px solid #fff;
+    box-shadow: 0 5px 5px #000;
+    overflow: hidden;
+    margin: 20px 15px;
+    align-items: center;
+  }
+  .box-container .box img{
+    height: 100%;
+    width: 100%;
+    object-fit: cover;
+    filter: grayscale();
+  }
+ </style>
+</head>
+<body>
+   <div class="body">
+    <nav class="navbar navbar-expand-lg " style="background:transparent; justify-content: space-between;">
+      <a class="navbar-brand" href="" target="_blank"><h5 class="text-box"><img src="https://media.licdn.com/dms/image/C560BAQETm0mhlZFeqQ/company-logo_200_200/0/1675503582524?e=2147483647&v=beta&t=FlvlvidSDyNqpgt-6Okq1I6wb1a-midaUKx3KJQgfJA"
+          alt="navbarlogo" style="width:auto; height: 50px " />  Our Courses</h5></a>
+
+        
+
+            
+            <div class="navbar-nav" style="margin-left: 20px;" >
+              <!--All Course Button-->
+            <ul class="navbar-nav " >
+              <!--Frontend btn-->
+            <li class="nav-item">
+            <a class="bttn" aria-current="page" href="{% url 'frontend' %}"  >FrontEnd</a>
+              </li>
+              <!--Backend btn-->
+              <li class="nav-item">
+                <a class="bttn" aria-current="page" href="{% url 'backend' %}" >Backend</a>
+              </li>
+              <!--database btn-->
+              <li class="nav-item">
+                <a class="bttn " aria-current="page" href="{% url 'database' %}" >Database</a>
+              </li>
+              <!--marketing btn-->
+              <li class="nav-item">
+                <a class="bttn  " aria-current="page" href="{% url 'marketing' %}" >Marketing</a>
+              </li>
+          </ul>
+        </div>
+    </nav>
+
+       </div>
+       
+       <div class="fe-section mt-5" id="fe-section">
+        <div class="container mt-2">
+          <h1 class="text-center font-weight-bold mb-5">Database Technologies</h1>
+          <div class="row" style="display: grid; grid-template-columns: repeat(3, 1fr); margin-left: auto;margin-right: auto;">
+          {% for x in result %}
+          <div class="col-md-3" style="border-radius:150px; padding:20px;">
+                   <div class="box" >
+           
+                <img src={{x.8}} class=" img-thumbnail">
+                <div class="card-body">
+                  {{x.1}}
+                  <a href="{% url 'course_detail' x.0 %}"> click here.</a>
+                  <a href="{% url 'registeration' %}" class="btn btn-primary" onclick="display('be-section')">Enroll Now</a>
+                  
+                
+            </div>
+           </div>
+         </div><!-- added by me for this -->
+           {% endfor %}
+           
+            
+          
+        </div>
+  </div>
+
+             <!--div class="col-md-4">
+               <div class="card p-3 mb-3">
+                 <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSTuBozTMfgNTErkZDeZvtO8TpmfMuyw9w8QFi0hkRf7ozIQQtryM1kRMG79S87m5rIatA&usqp=CAU" class="img-sec img-thumbnail">
+                 <div class="card-body">
+                   Course description goes<a href=""> click here.</a>
+                   <a href="{% url 'registeration' %}" class="btn btn-primary">Enroll Now</a>
+                   <span class="discount-tag">50% off!
+                 </div>
+               </div>
+             </div>
+             <div class="col-md-4">
+               <div class="card p-3 mb-3">
+                 <img src="https://miro.medium.com/v2/resize:fit:955/1*eUTK5gvvm8H1_kGR_S6Ncg.png" class="img-sec img-thumbnail">
+                 <div class="card-body">
+                   Course description goes<a href=""> click here.</a>
+                   <a href="{% url 'registeration' %}" class="btn btn-primary">Enroll Now</a>
+                   <span class="discount-tag">50% off!
+                 </div>
+               </div>
+               </div>
+               </div>
+               <div class="row">
+                 <div class="col-md-4">
+                   <div class="card p-3 mb-3">
+                   <img src="https://community-cdn-digitalocean-com.global.ssl.fastly.net/emSBsESzw1x2Ya8W3Uo9LihD" class="img-sec img-thumbnail">
+                   <div class="card-body">
+                     Course description goes<a href=""> click here.</a>
+                     <a href="{% url 'registeration' %}" class="btn btn-primary">Enroll Now</a>
+                     <span class="discount-tag">50% off!
+                   </div>
+               </div>
+               </div>
+               <div class="col-md-4">
+                 <div class="card p-3 mb-3">
+                 <img src="https://res.cloudinary.com/hevo/image/upload/f_auto,q_auto/v1650547160/hevo-learn/sqlite.png?_i=AA" class="img-sec img-thumbnail">
+                 <div class="card-body">
+                   Course description goes<a href=""> click here.</a>
+                   <a href="{% url 'registeration' %}" class="btn btn-primary">Enroll Now</a>
+                   <span class="discount-tag">50% off!
+                 </div>
+             </div>
+             </div>
+             <div class="col-md-4">
+               <div class="card p-3 mb-3">
+               <img src="https://rms.koenig-solutions.com/Sync_data/CCE_Logo/2764-KOENIG(17)min.pngL.jpg" class="img-sec img-thumbnail">
+               <div class="card-body">
+                 Course description goes<a href=""> click here.</a>
+                 <a href="{% url 'registeration' %}" class="btn btn-primary">Enroll Now</a>
+                 <span class="discount-tag">50% off!
+               </div>
+           </div>
+           </div-->
+             </div>
+           </div>
+       </div>
+   </div>
+
+</body>
+</html>

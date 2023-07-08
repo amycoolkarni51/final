@@ -1,0 +1,132 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>
+            ACC_login
+        </title>
+        <style>
+            html {
+  height: 100%;
+}
+body {
+  margin:0;
+  padding:0;
+  font-family: sans-serif;
+  background: linear-gradient(#141e30, #243b55);
+}
+
+.ACC_login {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  width: 400px;
+  padding: 40px;
+  transform: translate(-50%, -50%);
+  background: rgba(0,0,0,.5);
+  box-sizing: border-box;
+  box-shadow: 0 15px 25px rgba(0,0,0,.6);
+  border-radius: 10px;
+  border: 2px solid #fff;
+}
+
+.ACC_login h2 {
+  margin: 0 0 30px;
+  padding: 0;
+  color: #fff;
+  text-align: center;
+}
+
+.ACC_login .box {
+  position: relative;
+}
+
+.ACC_login .box input {
+  width: 100%;
+  padding: 10px 0;
+  font-size: 16px;
+  color: #fff;
+  margin-bottom: 30px;
+  border: none;
+  border-bottom: 1px solid #fff;
+  outline: none;
+  background: transparent;
+}
+.ACC_login .box label {
+  position: absolute;
+  top:0;
+  left: 0;
+  padding: 10px 0;
+  font-size: 16px;
+  color: #fff;
+  pointer-events: none;
+  transition: .5s;
+}
+
+.ACC_login .box input:focus ~ label,
+.ACC_login .box input:valid ~ label {
+  top: -20px;
+  left: 0;
+  color: #03e9f4;
+  font-size: 12px;
+}
+
+.ACC_login form .btn {
+  position: relative;
+  display: inline-block;
+  padding: 10px 0;
+  color: #03e9f4;
+  font-size: 16px;
+  text-decoration: none;
+  text-transform: uppercase;
+  overflow: hidden;
+  transition: .5s;
+  
+  letter-spacing: 4px
+  
+}
+
+.ACC_login .btn:hover {
+  background: #03e9f4;
+  color: #fff;
+  border-radius: 5px;
+  border: 2px solid #fff;
+ 
+}
+
+
+
+
+        </style>
+    </head>
+    <body>
+        <div class="ACC_login">
+            <h2>Login</h2>
+            <!--form-->
+            <form method="POST">
+              {% csrf_token %}
+              <!--div class="box">
+                <input type="text" name="" required="">
+                <label>Username</label>
+              </div-->
+              <div class="box">
+                <input type="email" name="EmailId" required="">
+                <label>EmailId</label>
+              </div>
+              <div class="box">
+                <input type="password" name="Password" required="">
+                <label>Password</label>
+              </div>
+              <!--a href="#" class="btn">
+                Submit
+              </a-->
+              <div>
+                <input type="submit" class="btn">
+            </div>
+              <div class="box">
+                <a href="#" style="text-decoration: none; color: #fff; ">Forget Password</a>
+                <a href="{% url 'registeration' %}" style="text-decoration: none; color: #fff; margin-left: 100px;font-size: 20px;">Register</a>
+              </div>
+            </form>
+          </div>
+    </body>
+</html>

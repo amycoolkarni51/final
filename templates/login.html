@@ -1,0 +1,236 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>
+            ACC_login
+        </title>
+        <style>
+            body {
+    font-size: 16px;
+    font-family: system-ui;
+    background:-webkit-radial-gradient(top left,#2C3283);
+}
+
+.form{
+    width: 100%;
+}
+h2 {
+    text-align: center;
+    color: #ef6f58f4;
+}
+form {
+    width: 300px;
+    padding: 15px 40px 40px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    background-color: #fff;
+    margin: 4% auto;
+}
+label {
+    display: block;
+    margin-bottom: 5px
+}
+label i {
+    color: #999;
+    font-size: 80%;
+}
+input, select {
+    border: 1px solid #ccc;
+    padding: 10px;
+    display: block;
+    width: 100%;
+    box-sizing: border-box;
+    border-radius: 2px;
+    background-color: #a9bae64a;
+}
+.box {
+    padding-bottom: 10px;
+}
+.form-inline {
+    border: 1px solid #ccc;
+    padding: 8px 10px 4px;
+    border-radius: 2px;
+}
+.form-inline label, .form-inline input {
+    display: inline-block;
+    width: auto;
+    padding-right: 15px;
+}
+.error {
+    color: red;
+    font-size: 90%;
+}
+input[type=text]{
+        outline: none;
+}
+
+input[type="submit"] {
+    font-size: 110%;
+    font-weight: 100;
+    background: #ef6e58;
+    border-color: #ef6e58;
+    box-shadow: 0 3px 0 #bd432e;
+    color: #fff;
+    margin-top: 10px;
+    cursor: pointer;
+}
+input[type="submit"]:hover {
+    background: #bd432e;
+    border-color: #bd432e;
+}
+
+.input-1{
+    background-image: url(../images/check.png);
+    background-repeat: no-repeat;
+    background-position: right 10px center;
+    border:1px solid #01cc40;
+}
+.input-2{
+    background-image: url(../images/cancel.png);
+    background-repeat: no-repeat;
+    background-position: right 10px center;
+    border:1px solid red;
+}
+.input-3{
+    border:1px solid #01cc40!important;
+}
+select{
+    outline: none!important;
+}
+.input-4{
+    border:1px solid red;
+}
+        </style>
+    </head>
+    <body>
+        <div class="ACC_login">
+            <h2>Login</h2>
+            <!--form-->
+            <form method="POST" onsubmit="return validateForm()" name="Form">
+              {% csrf_token %}
+              <!--div class="box">
+                <input type="text" name="" required="">
+                <label>Username</label>
+              </div-->
+              <div class="box">
+                <input type="email" id="Email" class="form-control" placeholder="Verify Your Email Id Here" name="EmailId" pattern="[a-z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{2,}$" title="" style="height: 45px;" required >
+                <label>EmailId</label>
+              </div>
+              <div class="box">
+                <input type="password" id="psw" name="Password" placeholder="Set Password" pattern="(?=.*\d)(?=.*[a-z])(?=.*[A-Z]).{8,}" title="Must contain at least one number and one uppercase and lowercase letter, and at least 8 or more characters" style="height: 45px;" required>
+                <label>Password</label>
+              </div>
+              <!--a href="#" class="btn">
+                Submit
+              </a-->
+              <div>
+                <input type="submit" class="btn">
+            </div>
+              <div class="box">
+                <a href="#" style="text-decoration: none; color: #fff; ">Forget Password</a>
+                <a href="#" style="text-decoration: none; color: #fff; margin-left: 100px;font-size: 20px;">Signup</a>
+              </div>
+            </form>
+            <script>
+              var myInput = document.getElementById("psw");
+               var letter = document.getElementById("letter");
+               var capital = document.getElementById("capital");
+               var number = document.getElementById("number");
+               var length = document.getElementById("length");
+             
+             // When the user clicks on the password field, show the message box
+             myInput.onfocus = function() {
+               document.getElementById("message").style.display = "block";
+             }
+             
+             // When the user clicks outside of the password field, hide the message box
+             myInput.onblur = function() {
+               document.getElementById("message").style.display = "none";
+             }
+             
+             // When the user starts to type something inside the password field
+             myInput.onkeyup = function() {
+               // Validate lowercase letters
+               var lowerCaseLetters = /[a-z]/g;
+               if(myInput.value.match(lowerCaseLetters)) {  
+                 letter.classList.remove("invalid");
+                 letter.classList.add("valid");
+               } else {
+                 letter.classList.remove("valid");
+                 letter.classList.add("invalid");
+               }
+               
+               // Validate capital letters
+               var upperCaseLetters = /[A-Z]/g;
+               if(myInput.value.match(upperCaseLetters)) {  
+                 capital.classList.remove("invalid");
+                 capital.classList.add("valid");
+               } else {
+                 capital.classList.remove("valid");
+                 capital.classList.add("invalid");
+               }
+             
+               // Validate numbers
+               var numbers = /[0-9]/g;
+               if(myInput.value.match(numbers)) {  
+                 number.classList.remove("invalid");
+                 number.classList.add("valid");
+               } else {
+                 number.classList.remove("valid");
+                 number.classList.add("invalid");
+               }
+               
+               // Validate length
+               if(myInput.value.length >= 8) {
+                 length.classList.remove("invalid");
+                 length.classList.add("valid");
+               } else {
+                 length.classList.remove("valid");
+                 length.classList.add("invalid");
+               }
+             }
+     
+             /*Vishal patil- Database Team 
+                     Data 13/06/2023 to 14/06/2023 
+                     Password validation code Ends here */
+          
+       /*  Vishal patil- Database Team 
+       Data 15/06/2023  Javascript For 
+       Confirm password section Starts Here */
+     
+         var password = document.getElementById("psw")
+       , confirm_password = document.getElementById("cnfrm-password");
+     
+     function validatePassword(){
+       if(password.value != confirm_password.value) {
+         confirm_password.setCustomValidity("Passwords Don't Match");
+       } else {
+         confirm_password.setCustomValidity('');
+       }
+     }
+     
+     password.onchange = validatePassword;
+     confirm_password.onkeyup = validatePassword;
+     
+     
+     /* developer- Vishal R. Patil
+        Date 18/06/2023
+       Validation Message popup script for Full Name And Mail-Id
+     */
+     
+     /* validation Message For Full Name Field */ 
+     var input = document.getElementById('Full_Name');
+     input.oninvalid = function(event) {
+       event.target.setCustomValidity('Please Enter Valid Full Name');
+     }
+     
+     /* validation Message For Email Field */ 
+     var input = document.getElementById('Email');
+     input.oninvalid = function(event) {
+       event.target.setCustomValidity('Please Enter Valid Email Address');
+     }     
+        
+           </script>
+          </div>
+    </body>
+</html>

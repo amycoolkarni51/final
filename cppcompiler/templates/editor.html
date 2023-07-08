@@ -1,0 +1,105 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+  <!-- Required meta tags -->
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+  <!-- Bootstrap CSS -->
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css"
+    integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+
+  <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js"
+    integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN"
+    crossorigin="anonymous"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js"
+    integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q"
+    crossorigin="anonymous"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js"
+    integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl"
+    crossorigin="anonymous"></script>
+
+
+  <title>CPP Compiler</title>
+  <style>
+    .dropdown {
+      display: inline-block;
+      position: relative;
+      margin-bottom: 50px;
+    }
+
+    .dropdown-options {
+      display: none;
+      position: absolute;
+      overflow: auto;
+    }
+
+    .dropdown:hover .dropdown-options {
+      display: block;
+    }
+  </style>
+</head>
+
+<body style="font-family:Verdana;"><br>
+  <h1 style="text-align:center;">CPP Compiler</h1><br>
+
+  <form action="/cppcompiler/editor/" method="post">
+    <div class="dropdown">
+      <button>Options</button>
+      <div class="dropdown-options">
+        <a href="/cppcompiler/editor/">CPP</a>
+        <a href="/javacompiler/editor/">JAVA</a>
+        <a href="/jscompiler/editor/">JS</a>
+        <a href="/phpcompiler/editor/">PHP</a>
+        <a href="/pycompiler/editor/">PY</a>
+        <a href="/webcompiler/editor/">WEB</a>
+      </div>
+    </div>
+
+    {% csrf_token %}
+
+    <div class="form-group" style="margin-left:50px;margin-right:50px;">
+      <label for="codearea">Code Area</label>
+      <textarea type="text" spellcheck="false" class="form-control" id="codearea" name="codearea" rows="10"
+        onkeydown="if(event.keyCode===9){var v=this.value,s=this.selectionStart,e=this.selectionEnd;this.value=v.substring(0, s)+'\t'+v.substring(e);this.selectionStart=this.selectionEnd=s+1;return false;}">{{ code }}</textarea>
+    </div>
+
+    <div class="form-group" style="margin-left:50px;margin-right:50px;">
+      <label for="output">Output</label>
+      <textarea type="text" class="form-control" id="output" name="output" rows="4" disabled> {{ output }} </textarea>
+    </div>
+
+    <button type="submit" class="btn btn-primary" style="margin-left:50px;">Submit</button>
+  </form>
+  <a href="#" onclick="downloadFile()">Download File</a>
+
+</body>
+
+<script>
+  function downloadFile() {
+    // data is retrieved from the textarea
+    const data = document.querySelector('#codearea').textContent
+
+    // a blob object and a url resource to a blob object is created,
+    // following lines till a.download are required to make
+    // a window appear prompting the location of the download
+    const blob = new Blob([data], { type: 'text/plain' })
+    const url = window.URL.createObjectURL(blob)
+
+    const a = document.createElement('a')
+    a.href = url
+    a.download = 'program.cpp'
+
+    // this element is NOT present on the DOM.
+    // A click is simulated to go to the specified link
+    a.click()
+
+    // removal of redundant variables
+    // BLOB SHOULD NOT BE REMOVED!
+    window.URL.revokeObjectURL(url)
+    a.remove()
+  }
+</script>
+
+</html>

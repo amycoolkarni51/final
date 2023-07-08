@@ -1,0 +1,199 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>Online Editor</title>
+    <style>
+        #code-container {
+            display: flex;
+        }
+
+        #code-input {
+            flex: 1;
+            padding-right: 20px;
+        }
+
+        #preview {
+            flex: 1;
+            padding-left: 20px;
+        }
+
+        .dropdown {
+            display: inline-block;
+            position: relative;
+            margin-bottom: 50px;
+        }
+
+        .dropdown-options {
+            display: none;
+            position: absolute;
+            overflow: auto;
+        }
+
+        .dropdown:hover .dropdown-options {
+            display: block;
+        }
+    </style>
+    <script>
+        function updatePreview() {
+            var htmlCode = document.getElementById('html_code').value;
+            var cssCode = document.getElementById('css_code').value;
+            var jsCode = document.getElementById('js_code').value;
+
+            var xhr = new XMLHttpRequest();
+            xhr.open('POST', '/webcompiler/preview/');
+            xhr.setRequestHeader('Content-Type', 'application/x-www-form-urlencoded');
+            xhr.setRequestHeader('X-CSRFToken', getCookie('csrftoken'));
+            xhr.onreadystatechange = function () {
+                if (xhr.readyState === XMLHttpRequest.DONE && xhr.status === 200) {
+                    document.getElementById('preview-frame').srcdoc = xhr.responseText;
+                }
+            };
+            xhr.send('html_code=' + encodeURIComponent(htmlCode) +
+                '&css_code=' + encodeURIComponent(cssCode) +
+                '&js_code=' + encodeURIComponent(jsCode));
+        }
+
+        // Function to get the CSRF token cookie value
+        function getCookie(name) {
+            var cookieValue = null;
+            if (document.cookie && document.cookie !== '') {
+                var cookies = document.cookie.split(';');
+                for (var i = 0; i < cookies.length; i++) {
+                    var cookie = cookies[i].trim();
+                    if (cookie.substring(0, name.length + 1) === (name + '=')) {
+                        cookieValue = decodeURIComponent(cookie.substring(name.length + 1));
+                        break;
+                    }
+                }
+            }
+            return cookieValue;
+        }
+
+        // following three functions go thru these steps:
+        // 1: a blob is created to store the code as files in the browser
+        // 2: a anchor tag is created, this tag won't be available on the DOM
+        //    the url to the blob is added to the href attr. and the download 
+        //    attr. describes the file name & extension 
+        // 3: a click is simulated on this anchor tag
+        // 4: the redundant variables are removed
+        function downloadHTML() {
+            // 1
+            const htmlCode = document.getElementById('html_code').value;
+            const blob = new Blob([htmlCode], { type: 'text/html' });
+            const url = window.URL.createObjectURL(blob);
+            
+            // 2
+            const a = document.createElement('a');
+            a.href = url;
+            a.download = 'index.html';
+
+            // 3
+            a.click();
+
+            // 4
+            window.URL.revokeObjectURL(url);
+            a.remove();
+        }
+
+        function downloadCSS() {
+            // 1
+            const cssCode = document.getElementById('css_code').value;
+            const blob = new Blob([cssCode], { type: 'text/css' });
+            const url = window.URL.createObjectURL(blob);
+
+            // 2
+            const a = document.createElement('a');
+            a.href = url;
+            a.download = 'styles.css';
+
+            // 3
+            a.click();
+
+            // 4
+            window.URL.revokeObjectURL(url);
+            a.remove();
+        }
+
+        function downloadJS() {
+            // 1
+            const jsCode = document.getElementById('js_code').value;
+            const blob = new Blob([jsCode], { type: 'text/javascript' });
+            const url = window.URL.createObjectURL(blob);
+
+            // 2
+            const a = document.createElement('a');
+            a.href = url;
+            a.download = 'script.js';
+
+            // 3
+            a.click();
+
+            // 4
+            window.URL.revokeObjectURL(url);
+            a.remove();
+        }
+    </script>
+</head>
+
+<body>
+    <h1>Online Editor</h1>
+    <div class="dropdown">
+        <button>Options</button>
+        <div class="dropdown-options">
+            <a href="/cppcompiler/editor/">CPP</a>
+            <a href="/javacompiler/editor/">JAVA</a>
+            <a href="/jscompiler/editor/">JS</a>
+            <a href="/phpcompiler/editor/">PHP</a>
+            <a href="/pycompiler/editor/">PY</a>
+            <a href="/webcompiler/editor/">WEB</a>
+        </div>
+    </div>
+    <div id="code-container">
+        <div id="code-input">
+            <label for="html_code">HTML:</label><br>
+            <textarea name="html_code" id="html_code" rows="10" cols="90" placeholder="&lt;!-- Enter your HTML code here --&gt;">
+&lt;!DOCTYPE html&gt;
+&lt;html&gt;
+&lt;head&gt;
+    &lt;title&gt;My Webpage&lt;/title&gt;
+&lt;/head&gt;
+&lt;body&gt;
+    &lt;h1&gt;Welcome to My Webpage!&lt;/h1&gt;
+    &lt;p&gt;This is a sample HTML code.&lt;/p&gt;
+&lt;/body&gt;
+&lt;/html&gt;
+            </textarea><br><br>
+
+            <label for="css_code">CSS:</label><br>
+            <textarea name="css_code" id="css_code" rows="10" cols="90" placeholder="/* Enter your CSS code here */">
+h1 {
+    color: blue;
+}
+
+p {
+    font-size: 18px;
+}
+            </textarea><br><br>
+
+            <label for="js_code">JavaScript:</label><br>
+            <textarea name="js_code" id="js_code" rows="10" cols="90" placeholder="// Enter your JavaScript code here">
+document.addEventListener('DOMContentLoaded', function() {
+    // Add your JavaScript code here
+});
+            </textarea><br><br>
+
+            {% csrf_token %}
+            <input type="button" value="Preview" onclick="updatePreview()">
+            <button onclick="downloadHTML()">Download HTML</button>
+            <button onclick="downloadCSS()">Download CSS</button>
+            <button onclick="downloadJS()">Download JavaScript</button>
+        </div>
+        <div id="preview">
+            <h1>Preview:</h1>
+            <iframe id="preview-frame" width="100%" height="500px"></iframe>
+        </div>
+    </div>
+</body>
+
+</html>
