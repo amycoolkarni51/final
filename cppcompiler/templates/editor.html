@@ -21,7 +21,7 @@
     crossorigin="anonymous"></script>
 
 
-  <title>CPP Compiler</title>
+  <title >CPP Compiler</title>
   <style>
     .dropdown {
       display: inline-block;
@@ -39,23 +39,86 @@
       display: block;
     }
   </style>
+<!--
+added by -- vishal patil
+date -- 08/07/2023
+compiler dropdown list css
+-->
+
+<style>
+/* Style The Dropdown Button */
+.dropbtn2 {
+  background-color: #4CAF50;
+  color: white;
+  padding: 16px;
+  font-size: 16px;
+  border: none;
+  cursor: pointer;
+  
+}
+
+/* The container <div> - needed to position the dropdown content */
+.dropdown {
+  position: relative;
+  display: inline-block;
+}
+
+/* Dropdown Content (Hidden by Default) */
+.dropdown-content {
+  display: none;
+  position: absolute;
+  background-color: #f9f9f9;
+  min-width: 200px;
+  box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
+  z-index: 1;
+}
+
+/* Links inside the dropdown */
+.dropdown-content a {
+  color: black;
+  padding: 12px 16px;
+  text-decoration: none;
+  display: block;
+}
+
+/* Change color of dropdown links on hover */
+.dropdown-content a:hover {background-color: #f1f1f1}
+
+/* Show the dropdown menu on hover */
+.dropdown:hover .dropdown-content {
+  display: block;
+}
+
+/* Change the background color of the dropdown button when the dropdown content is shown */
+.dropdown:hover .dropbtn2 {
+  background-color: #3e8e41;
+}
+</style>
+
 </head>
 
 <body style="font-family:Verdana;"><br>
-  <h1 style="text-align:center;">CPP Compiler</h1><br>
+      <!--
+    Added By -- Vishal Patil
+    Date 08/07/2023
+    dropdown list for compilers
+  -->
+
+  <div class="dropdown" style="margin-left: 1200px;">
+    <button class="dropbtn2">Select Compiler</button>
+    <div class="dropdown-content">
+      <a href="/pycompiler/editor/">Python Compiler</a>
+      <a href="/javacompiler/editor/">Java Compiler</a>
+      <a href="/jscompiler/editor/">JavaScript Compiler</a>
+      <a href="/phpcompiler/editor/">PHP Compiler</a>
+      <a href="/cppcompiler/editor/">CPP Compiler</a>
+      <a href="/webcompiler/editor/">HTML,CSS Compiler</a>
+    </div>
+</div>
+
+  <h1 style="text-align:center; margin-top: -30px;">CPP Compiler</h1><br>
 
   <form action="/cppcompiler/editor/" method="post">
-    <div class="dropdown">
-      <button>Options</button>
-      <div class="dropdown-options">
-        <a href="/cppcompiler/editor/">CPP</a>
-        <a href="/javacompiler/editor/">JAVA</a>
-        <a href="/jscompiler/editor/">JS</a>
-        <a href="/phpcompiler/editor/">PHP</a>
-        <a href="/pycompiler/editor/">PY</a>
-        <a href="/webcompiler/editor/">WEB</a>
-      </div>
-    </div>
 
     {% csrf_token %}
 
